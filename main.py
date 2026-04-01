@@ -1,43 +1,42 @@
-# Example file showing a circle moving on screen
 import pygame
 
-# pygame setup
 pygame.init()
-screen = pygame.display.set_mode((1280, 720))
+
+screen = pygame.display.set_mode((1000,800))
 clock = pygame.time.Clock()
-running = True
-dt = 0
+runnig = True
+delta_time = 0 #Tiempo que paso desde el ultimo frame(sirve para que sin importar los fps se muevan igual no mas rapido no mas lento)
 
-player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
+#Crea un vector2(2d) en el centro exacto de la pantalla
+#Lo guarda como posicion del jugador
+player_position = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
 
-while running:
-    # poll for events
-    # pygame.QUIT event means the user clicked X to close your window
+while runnig:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False
-
-    # fill the screen with a color to wipe away anything from last frame
-    screen.fill("purple")
-
-    pygame.draw.circle(screen, "red", player_pos, 40)
-
+            runnig = False
+    screen.fill("red")
+    
+    #Crea un poligono(Triangulo)
+    pygame.draw.polygon(screen,"white",[
+        (player_position.x      ,player_position.y - 50), 
+        (player_position.x - 50 ,player_position.y + 50), 
+        (player_position.x + 50 ,player_position.y + 50)
+        ], 0)
+    
     keys = pygame.key.get_pressed()
     if keys[pygame.K_w]:
-        player_pos.y -= 300 * dt
+        player_position.y -= 300 * delta_time
     if keys[pygame.K_s]:
-        player_pos.y += 300 * dt
+        player_position.y += 300 * delta_time
     if keys[pygame.K_a]:
-        player_pos.x -= 300 * dt
+        player_position.x -= 300 * delta_time
     if keys[pygame.K_d]:
-        player_pos.x += 300 * dt
-
-    # flip() the display to put your work on screen
+        player_position.x += 300 * delta_time
+    
+    #Actualiza lo que pase en pantalla
     pygame.display.flip()
-
-    # limits FPS to 60
-    # dt is delta time in seconds since last frame, used for framerate-
-    # independent physics.
-    dt = clock.tick(60) / 1000
-
+    
+    delta_time = clock.tick(60) / 1000
+    
 pygame.quit()
