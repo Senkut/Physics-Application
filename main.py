@@ -7,7 +7,7 @@ if __name__ == "__main__":
     
     # Creamos una scena vacia de prueba (depues se cambia a una real)
     initial_scene = Scene(game_engine)
-    game_engine .chenge_scene(initial_scene)
+    game_engine.chenge_scene(initial_scene)
     
     # Iniamos el game loop
     game_engine.run()
