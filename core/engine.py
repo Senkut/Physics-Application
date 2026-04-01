@@ -28,13 +28,13 @@ class Engine:
                     self.running = False
             
             # Poner en modo ventana o pantalla completa
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_F11:
-                    self.fullscreen = not self.fullscreen
-                    if self.fullscreen:
-                        self.screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
-                    else:
-                        self.screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE)
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_F11:
+                        self.fullscreen = not self.fullscreen
+                        if self.fullscreen:
+                            self.screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
+                        else:
+                            self.screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE)
                 
             # Poner eventos de la escena actual
             if self.current_scene:

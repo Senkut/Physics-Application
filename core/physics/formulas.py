@@ -14,7 +14,7 @@ def mru_pos(x0, v , t):
     return x0 +  v * t
 
 def mrua_pos(x0, v0, a, t):
-    return x0 + v0 + t + 0.5 * a * (t**2)
+    return x0 + v0 * t + 0.5 * a * (t**2)
 
 def mrua_vel(v0, a , t):
     return v0 + a * t
