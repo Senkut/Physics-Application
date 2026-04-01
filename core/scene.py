@@ -1,4 +1,4 @@
-class Scenes:
+class Scene:
     def __init__(self, engine):
         # Le pasamos el engine a la escena para que la escena pueda
         # acceder a la pantalla o decirle al motor "cambia a otra escena"
