@@ -16,5 +16,7 @@ SKY_BLUE  = (135, 206, 235)
 LIGHTGREEN = (144, 238, 144)
 
 # Fisica
+PI = 3.16
+C_D = 0.47
 GRAVITY = 9.8
 PPM = 20 # Pixeles por metro PPM
