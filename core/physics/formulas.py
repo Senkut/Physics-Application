@@ -11,11 +11,11 @@ t = tiempo             (segundos)
 """
 
 def mru_pos(x0, v , t):
-    return int(x0 +  (v * t)*PPM)
-
+    return x0 +  (v * t)*PPM
+ 
 def mrua_pos(x0, v0, a, t):
-    return x0 + v0 * t + 0.5 * a * (t**2)
-
+   x =(v0 * t )+ (0.5 * a * (t**2))
+   return x0 + x*PPM
 def mrua_vel(v0, a , t):
     return v0 + a * t
 

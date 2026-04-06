@@ -15,6 +15,7 @@ class Mru(Scene):
         print("poner los eventos que use para cojer los datos de usrer")
     def update(self, dt): #el dt = self.engine.clock.tick(60)/1000.0
         self.mov(dt)
+        print(self.potion[0])
     def draw(self, screen):
         screen.blit(self.sprite,self.potion)
     def run():
